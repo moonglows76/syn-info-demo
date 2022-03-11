@@ -1,8 +1,11 @@
 <template>
   <div>
     <article>
-
+      <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
       <h1>{{ title }}</h1>
+      <div>
+        {{ $dayjs(publishedAt).format('YYYY年M月D日') }}
+      </div>
       <div
         v-for="(body_content, index) in body"
         :key="index"
