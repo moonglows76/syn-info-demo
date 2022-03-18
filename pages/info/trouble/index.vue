@@ -4,7 +4,10 @@
     <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
     <NavInfo />
     <InformationList :contents="contents" />
-    <p><NuxtLink to="/info/trouble/archives/2022-03">2022年3月</NuxtLink></p>
+    <InformationMonthList
+      type="trouble"
+      :contents="contents"
+    />
   </div>
 </template>
 
