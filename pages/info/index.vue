@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>お知らせ</h1>
-    <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
+    <p><NuxtLink to="/">トップページ</NuxtLink></p>
     <NavInfo />
     <InformationList :contents="contents" />
     <InformationMonthList

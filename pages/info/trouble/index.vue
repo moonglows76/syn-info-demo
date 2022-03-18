@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>障害報告</h1>
-    <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
+    <p><NuxtLink to="/">トップページ</NuxtLink></p>
     <NavInfo />
     <TroubleList :contents="contents" />
     <InformationMonthList

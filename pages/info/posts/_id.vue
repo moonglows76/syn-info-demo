@@ -1,7 +1,7 @@
 <template>
   <div>
     <article>
-      <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
+      <p><NuxtLink to="/">トップページ</NuxtLink> > <NuxtLink to="/info/maintenance/">シナプスからのお知らせ</NuxtLink></p>
       <h1>{{ title }}</h1>
       <div>
         {{ $dayjs(publishedAt).format('YYYY年M月D日') }}
