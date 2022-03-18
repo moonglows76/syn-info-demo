@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p><NuxtLink to="/">トップページ</NuxtLink> > <NuxtLink to="/info/maintenance/">シナプスからのお知らせ</NuxtLink></p>
+    <p><NuxtLink to="/">トップページ</NuxtLink> > <NuxtLink to="/info/">シナプスからのお知らせ</NuxtLink></p>
     <h1>シナプスからのお知らせ</h1>
     <h2>{{ $dayjs(yearMonth).format('YYYY年M月') }}のお知らせ</h2>
     <NavInfo />
