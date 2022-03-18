@@ -3,7 +3,7 @@
     <h1>障害報告</h1>
     <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
     <NavInfo />
-    <InformationList :contents="contents" />
+    <TroubleList :contents="contents" />
     <InformationMonthList
       type="trouble"
       :contents="contents"

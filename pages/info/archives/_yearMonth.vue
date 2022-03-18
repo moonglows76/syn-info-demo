@@ -5,6 +5,10 @@
     <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
     <NavInfo />
     <InformationList :contents="contents" />
+    <InformationMonthList
+      type="information"
+      :contents="monthContents"
+    />
   </div>
 </template>
 
@@ -18,8 +22,16 @@ export default {
         limit: 100,
       },
     })
+    const monthContents = await $microcms.get({
+      endpoint: 'info',
+      queries: {
+        filters: `type[equals]information`,
+        limit: 100,
+      },
+    })
     return {
       contents,
+      monthContents: monthContents.contents,
       yearMonth: params.yearMonth,
     }
   }

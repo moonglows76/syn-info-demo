@@ -3,7 +3,7 @@
     <h1>メンテナンス計画</h1>
     <p><NuxtLink to="/">トップページに戻る</NuxtLink></p>
     <NavInfo />
-    <InformationList :contents="contents" />
+    <MaintenanceList :contents="contents" />
     <InformationMonthList
       type="maintenance"
       :contents="contents"
