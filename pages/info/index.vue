@@ -13,6 +13,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `お知らせ`,
+    }
+  },
   async asyncData({ $microcms }) {
     const { contents } = await $microcms.get({
       endpoint: 'info',

@@ -14,6 +14,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `${this.$dayjs(this.yearMonth).format('YYYY年M月')}のメンテナンス計画 | メンテナンス計画`,
+    }
+  },
   async asyncData({ $microcms, params }) {
     const { contents } = await $microcms.get({
       endpoint: 'info',

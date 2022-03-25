@@ -39,6 +39,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: `${this.title} | メンテナンス計画`,
+    }
+  },
   async asyncData({ $microcms, params }) {
     const data = await $microcms.get({
       endpoint: 'info',

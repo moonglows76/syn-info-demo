@@ -16,6 +16,11 @@
 <script>
 
 export default {
+  head() {
+    return {
+      title: `トップ`,
+    }
+  },
   async asyncData({ $microcms }) {
     const { contents } = await $microcms.get({
       endpoint: 'info',
