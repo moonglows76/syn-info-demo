@@ -26,6 +26,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/common.js',
+    '~/plugins/day.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,7 +44,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/dayjs'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
