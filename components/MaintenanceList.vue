@@ -14,7 +14,9 @@
           {{ content.body[0].category[0] }}
         </span> {{ content.title }}<br>
         実施日時：<br>
-        <div v-html="content.body[0].datetime" />
+        <div>
+          {{ $dayjs(content.body[0].datetime_start).format('YYYY年M月D日(ddd) HH:mm') }} 〜 {{ $dayjs(content.body[0].datetime_end).format('YYYY年M月D日(ddd) HH:mm') }}
+        </div>
         対象となる地域：<br>
         <div v-html="content.body[0].areas" />
         対象となるサービス：<br>

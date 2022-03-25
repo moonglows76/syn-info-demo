@@ -18,7 +18,9 @@
           :class="body_content.category[0] === 'メンテナンス完了' ? 'red-text' : 'blue-text'"
         />
         <h2>メンテナンス日時</h2>
-        <div v-html="body_content.datetime" />
+        <div>
+          {{ $dayjs(body_content.datetime_start).format('YYYY年M月D日(ddd) HH:mm') }} 〜 {{ $dayjs(body_content.datetime_end).format('YYYY年M月D日(ddd) HH:mm') }}
+        </div>
         <h2>対象となる地域</h2>
         <div v-html="body_content.areas" />
         <h2>対象となるサービス</h2>
