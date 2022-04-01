@@ -6,7 +6,7 @@
     <NavInfo />
     <MaintenanceList :contents="contents" />
     <InformationMonthList
-      type="information"
+      type="maintenance"
       :contents="monthContents"
     />
   </div>
