@@ -14,6 +14,14 @@
         <div v-html="body_content.table" />
         <div v-html="body_content.info_body2" />
       </div>
+      <div
+        v-if="display_support"
+      >
+        お問い合わせ先<br>
+        シナプスサポートセンター<br>
+        電話：099-813-8699（受付時間　9：00 - 21：00 年中無休）<br>
+        メール：<a href="mailto:support@synapse.jp">support@synapse.jp</a>
+      </div>
     </article>
 
   </div>
