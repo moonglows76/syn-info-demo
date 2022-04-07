@@ -31,6 +31,7 @@ export default {
     }
   },
   computed: {
+    // お知らせ表示の件数制限
     informationContents() {
       const limit = 10
       return this.contents
@@ -39,9 +40,9 @@ export default {
     },
   },
   methods: {
+    // 障害報告とメンテナンス計画の年月表記
     updateDate(type) {
       const articles = this.contents.filter(content => content.type.id === type)
-      // return '4月4日'
       return this.$dayjs(articles[0].publishedAt).format('M月D日')
     },
   },
