@@ -16,9 +16,14 @@
     </div>
 
     <MaintenanceList :contents="contents" />
+    <Pagination
+      :pager="pager"
+      :current="Number(page)"
+      :path="path"
+    />
     <InformationMonthList
       type="maintenance"
-      :contents="contents"
+      :contents="monthContents"
     />
   </div>
 </template>
@@ -30,16 +35,32 @@ export default {
       title: `メンテナンス計画`,
     }
   },
-  async asyncData({ $microcms }) {
-    const { contents } = await $microcms.get({
+  async asyncData({ $microcms, params, $constants }) {
+    const page = params.p || '1'
+    const path = 'info/maintenance'
+    const limit = $constants.info.MAINTENANCE_LIST_LIMIT
+    const { contents, totalCount } = await $microcms.get({
       endpoint: 'info',
       queries: {
         filters: 'type[equals]maintenance',
-        limit: 20,
+        limit: limit,
+        offset: (page - 1) * limit
+      },
+    })
+    const monthContents = await $microcms.get({
+      endpoint: 'info',
+      queries: {
+        filters: `type[equals]maintenance`,
+        fields: 'publishedAt',
+        limit: $constants.info.MONTH_LIST_LIMIT,
       },
     })
     return {
-      contents
+      contents,
+      pager: [...Array(Math.ceil(totalCount / limit)).keys()],
+      page,
+      path,
+      monthContents: monthContents.contents,
       params,
     }
   },

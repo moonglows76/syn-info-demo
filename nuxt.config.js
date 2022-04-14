@@ -63,6 +63,16 @@ export default {
         component: resolve(__dirname, 'pages/info/archives/_yearMonth.vue'),
         name: 'information month archive list page',
       })
+      routes.push({
+        path: '/info/maintenance/page/:p',
+        component: resolve(__dirname, 'pages/info/maintenance/index.vue'),
+        name: 'maintenance list page',
+      })
+      routes.push({
+        path: '/info/maintenance/archives/:yearMonth/page/:p',
+        component: resolve(__dirname, 'pages/info/maintenance/archives/_yearMonth.vue'),
+        name: 'maintenance month archive list page',
+      })
     },
   },
 }
