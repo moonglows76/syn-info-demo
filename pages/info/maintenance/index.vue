@@ -3,15 +3,17 @@
     <p><NuxtLink to="/">トップページ</NuxtLink></p>
     <h1>メンテナンス計画</h1>
     <NavInfo />
-    <h2>直近のメンテナンス</h2>
-    <div v-if="latestContents.length === 0">
-      <p>この３日間に行われるメンテナンスはありません。</p>
+    <!-- 直近のメンテナンスはメンテナンストップでのみ表示 -->
+    <div v-if="params.p === undefined">
+      <h2>直近のメンテナンス</h2>
+      <div v-if="latestContents.length === 0">
+        <p>この３日間に行われるメンテナンスはありません。</p>
+      </div>
+      <div v-else>
+        <LatestMaintenanceList :contents="latestContents" />
+      </div>
+      <hr>
     </div>
-    <div v-else>
-      <LatestMaintenanceList :contents="latestContents" />
-    </div>
-
-    <hr>
 
     <MaintenanceList :contents="contents" />
     <InformationMonthList
@@ -38,6 +40,7 @@ export default {
     })
     return {
       contents
+      params,
     }
   },
   computed: {
