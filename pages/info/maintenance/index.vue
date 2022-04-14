@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1>メンテナンス計画</h1>
     <p><NuxtLink to="/">トップページ</NuxtLink></p>
+    <h1>メンテナンス計画</h1>
     <NavInfo />
     <h2>直近のメンテナンス</h2>
     <div v-if="latestContents.length === 0">
